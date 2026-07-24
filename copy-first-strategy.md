@@ -5,7 +5,7 @@ must read as if written by the author of its closest existing neighbor.
 Novel structure requires justification; copied structure does not.
 
 **Before writing code:**
-1. Find 1–3 analogs — existing units doing the closest job (same data
+1. Find 1-3 analogs -- existing units doing the closest job (same data
    source, base class, lifecycle hook, layer). Proximity ranking: same
    file > same module > same package > rest of repo.
 2. Propose the primary analog ("Modeling `NewThing` on `Analog`" plus one
@@ -22,13 +22,13 @@ Novel structure requires justification; copied structure does not.
    member ordering. New semantics change the inside of the structure, not
    the shape around it.
 5. Failure-handling parity: where the analog reports missing
-   sub-structures, the new code reports the equivalent — even if the task
+   sub-structures, the new code reports the equivalent -- even if the task
    didn't mention it. Silent return where the analog records an incident is
    a bug.
 
 **Tests:**
 6. Copy the shape of the neighbors' tests: same fixtures, same iteration,
-   same assertion source. If they loop over all fixture documents, loop —
+   same assertion source. If they loop over all fixture documents, loop --
    don't cherry-pick one and hardcode its values.
 7. Expected values live where the suite keeps them: extend fixture/golden
    files with the new expected data. Inline literals only when the suite
@@ -43,7 +43,7 @@ Novel structure requires justification; copied structure does not.
    differences explainable only by "different author, different time".
    List the deviations you kept, with reasons, in the summary.
 
-Example — adding an extraction step next to this existing one:
+Example -- adding an extraction step next to this existing one:
 
 ```python
 class InvoiceLineItems(ExtractionStep):
@@ -55,7 +55,7 @@ class InvoiceLineItems(ExtractionStep):
         ...
 ```
 
-Wrong — novel shape, silent failure, renamed variable:
+Wrong -- novel shape, silent failure, renamed variable:
 
 ```python
 class InvoiceAttachments(ExtractionStep):
@@ -67,7 +67,7 @@ class InvoiceAttachments(ExtractionStep):
         ...
 ```
 
-Right — the analog's shape, new semantics inside:
+Right -- the analog's shape, new semantics inside:
 
 ```python
 class InvoiceAttachments(ExtractionStep):

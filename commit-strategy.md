@@ -12,7 +12,7 @@ Natural commit order (foundational → additive):
 1. Dependency bumps (must precede code that uses them)
 2. Data structures / types / config models
 3. DB migrations
-4. Wiring — integrate types/config into existing structures/call sites
+4. Wiring -- integrate types/config into existing structures/call sites
    (compile-time stubs acceptable, not full logic)
 5. Core implementation logic
 6. Logging / observability
@@ -31,7 +31,7 @@ Example plan for an mTLS feature:
 
 **Before each commit:**
 1. Stage only changes belonging to that logical unit. Same file may appear
-   in multiple commits — split by logical concern, not by file.
+   in multiple commits -- split by logical concern, not by file.
 2. Verify the staged snapshot, not the working tree:
    `git stash push --keep-index --include-untracked`, run the test suite
    and linter, then `git stash pop`. Pop conflict → resolve, re-verify.
